@@ -37,6 +37,8 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+
+	
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
 		
@@ -127,25 +129,20 @@ public class UserController {
 			e.printStackTrace();
 		}
 		
-		System.out.println("카카오 아이디:"+kakaProfile.getId());
-		System.out.println("카카오 이메일:"+kakaProfile.getKakao_account().getEmail());
 		
-		//
-		System.out.println("블로그서버 유저네임"+kakaProfile.getKakao_account().getEmail()+"_"+kakaProfile.getId());
-		System.out.println("블로그서버 이메일"+kakaProfile.getKakao_account().getEmail());
-	    System.out.println("블로그서버 패스워드:"+cosKey);
 		
 		User kakaoUser =User.builder()
 				.username(kakaProfile.getKakao_account().getEmail()+"_"+kakaProfile.getId())
 				.password(cosKey)
-				.userEmail(kakaProfile.getKakao_account().getEmail())
+				.email(kakaProfile.getKakao_account().getEmail())
+			
 				.oauth("kakao")
 				.build();
 
 		System.out.println(kakaoUser.getUsername());
 		User originuser = userService.회원찾기(kakaoUser.getUsername());		
 		if(originuser.getUsername()==null) {
-			System.out.println("기존회원이 아니기에 자동회원가입을 진행합닏,ㅏ.,.");
+			System.out.println("기존회원이 아니기에 자동회원가입을 진행합니다.");
 			userService.회원가입(kakaoUser);
 			}
 			

@@ -22,11 +22,11 @@
 		</div>
 		<div class="form-group">
 			<label for="email">Email:</label>
-			 <input type="email" class="form-control" placeholder="Enter email" id="userEmail">
+			 <input type="email" class="form-control" placeholder="Enter email" id="email">
 		</div>
 		<div class="form-group">
 			<label for="phone">Phone:</label>			
-			 <input type="text" class="form-control" placeholder="Enter PhoneNumber" id="userTell">
+			 <input type="text" class="form-control" placeholder="Enter PhoneNumber" id="phone">
 		</div>
 		
 	</form>

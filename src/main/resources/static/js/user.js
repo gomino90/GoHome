@@ -16,11 +16,12 @@ save: function(){
 		
 		let data ={
 			
+			
 			username:$("#username").val(),
 			userId:$("#userId").val(),
 			password:$("#password").val(),
-			userEmail:$("#userEmail").val(),
-			userTell:$("#userTell").val()
+			email:$("#email").val(),
+			phone:$("#phone").val()
 		};
 
 		console.log(data);
@@ -48,8 +49,8 @@ update: function(){
 			username:$("#username").val(),
 			userId:$("#userId").val(),
 			password:$("#password").val(),
-			userEmail:$("#userEmail").val(),
-			userTell:$("#userTell").val()
+			email:$("#email").val(),
+			phone:$("#phone").val()
 		};
 
 	

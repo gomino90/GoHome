@@ -10,12 +10,14 @@ import com.pi.login.model.User;
 import com.pi.login.repository.UserRepository;
 
 
+
+
 @Service
 public class PrincipalDetailService implements UserDetailsService{
 	
 	@Autowired
 	private UserRepository userRepository;
-		
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User principal = userRepository.findByUsername(username)
@@ -26,3 +28,4 @@ public class PrincipalDetailService implements UserDetailsService{
 	}
 
 }
+

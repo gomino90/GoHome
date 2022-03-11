@@ -27,8 +27,8 @@ public class UserService {
 		});
 		return user;
 	}
-	@org.springframework.transaction.annotation.Transactional
-	public void 회원삭제하기(int id) {
+//	@org.springframework.transaction.annotation.Transactional
+	public void 회원탈퇴 (int id) {
 		userRepository.deleteById(id);
 			
 	}
@@ -55,8 +55,11 @@ public class UserService {
 			String rawPassword = user.getPassword();
 			String encPassword = encoder.encode(rawPassword);
 			persistance.setPassword(encPassword);
+			 persistance.setUsername(user.getUsername());
+			 persistance.setUserId(user.getUserId());
+			 persistance.setEmail(user.getEmail());
 		}
-		persistance.setUserTell(user.getUserTell());
-		persistance.setUserEmail(user.getUserEmail());
+	
+		
 			}
 }

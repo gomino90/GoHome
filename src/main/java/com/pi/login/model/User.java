@@ -30,20 +30,20 @@ public class User {
 	private int id;
 		
 	
-	@Column(nullable = false,length=100)
+	@Column(nullable = false,length=100,unique=true)
 	private String username;
 	
-	@Column(nullable = false,length=100,unique=true)
+	@Column(nullable = false,length=100)
 	private String userId;
 	
 	@Column(nullable = false,length=100)
 	private String password;
 	
 	@Column(nullable = false,length=50)
-	private String userEmail;
+	private String email;
 	
 	@Column(nullable = false,length=50)
-	private String userTell;
+	private String phone;
 
 	@Enumerated(EnumType.STRING)
 	private RoleType role;

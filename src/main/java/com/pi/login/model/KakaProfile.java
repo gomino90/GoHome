@@ -26,7 +26,7 @@ public class KakaProfile {
 		public Boolean is_email_valid;
 		public Boolean is_email_verified;
 		public String email;
-		public String phone;
+		public String phone_number;
 		
 		@Data
 		public class Profile {
